@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureBank - Digital Banking Made Simple</title>
+    <link rel="stylesheet" href="banking-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-university"></i>
+                <span>SecureBank</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#offers" class="nav-link">Offers</a>
+                <a href="#security" class="nav-link">Security</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <button class="btn-register" onclick="openModal('registerModal')">Register</button>
+                <div class="login-dropdown">
+                    <button class="btn-login" onclick="toggleLoginDropdown()">Login <i class="fas fa-chevron-down"></i></button>
+                    <div class="login-dropdown-content" id="loginDropdown">
+                        <a href="#" onclick="openModal('userLoginModal')"><i class="fas fa-user"></i> User Login</a>
+                        <a href="#" onclick="openModal('adminLoginModal')"><i class="fas fa-user-shield"></i> Admin Login</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Banking Made <span class="highlight">Simple</span></h1>
+                <p>Experience seamless digital banking with instant payments, secure transactions, and 24/7 customer support. Your financial partner for life.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="openModal('registerModal')">Open Account</button>
+                    <button class="btn-secondary">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Digital Payments</h3>
+                    <p>Send money instantly to anyone, anywhere with our secure payment system</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-wallet"></i>
+                    <h3>Digital Wallet</h3>
+                    <p>Store money securely and make quick payments with our digital wallet</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h3>Savings Account</h3>
+                    <p>Earn high interest on your savings with zero balance requirements</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-car"></i>
+                    <h3>FASTag</h3>
+                    <p>Skip toll queues with our convenient FASTag recharge service</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-mobile"></i>
+                    <h3>Mobile Recharge</h3>
+                    <p>Recharge your mobile, DTH, and data cards instantly</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Insurance</h3>
+                    <p>Protect yourself and your family with our comprehensive insurance plans</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose SecureBank?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Banking</h3>
+                    <p>Bank anytime, anywhere with our round-the-clock digital services</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Bank-Grade Security</h3>
+                    <p>Your money and data are protected with military-grade encryption</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant Transfers</h3>
+                    <p>Send and receive money instantly with our UPI-enabled platform</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-percentage"></i>
+                    <h3>Zero Hidden Fees</h3>
+                    <p>Transparent pricing with no hidden charges or maintenance fees</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section id="offers" class="offers">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-badge">New User</div>
+                    <h3>₹100 Welcome Bonus</h3>
+                    <p>Get ₹100 cashback on your first transaction of ₹500 or more</p>
+                    <button class="btn-offer">Claim Now</button>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">Limited Time</div>
+                    <h3>5% Cashback</h3>
+                    <p>Earn 5% cashback on mobile recharges and bill payments</p>
+                    <button class="btn-offer">Get Offer</button>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">Exclusive</div>
+                    <h3>Free FASTag</h3>
+                    <p>Get your FASTag for free with zero issuance charges</p>
+                    <button class="btn-offer">Apply Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="security">
+        <div class="container">
+            <div class="security-content">
+                <div class="security-text">
+                    <h2>Your Security is Our Priority</h2>
+                    <div class="security-features">
+                        <div class="security-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>256-bit SSL Encryption</h4>
+                                <p>All your data is encrypted with bank-grade security protocols</p>
+                            </div>
+                        </div>
+                        <div class="security-item">
+                            <i class="fas fa-fingerprint"></i>
+                            <div>
+                                <h4>Biometric Authentication</h4>
+                                <p>Secure login with fingerprint and face recognition technology</p>
+                            </div>
+                        </div>
+                        <div class="security-item">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <h4>Real-time Alerts</h4>
+                                <p>Instant notifications for all your account activities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="security-image">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About SecureBank</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Savings Account</a></li>
+                        <li><a href="#">Digital Payments</a></li>
+                        <li><a href="#">Mobile Banking</a></li>
+                        <li><a href="#">Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Report Fraud</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SecureBank. All rights reserved. | Licensed by RBI</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- User Login Modal -->
+    <div id="userLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('userLoginModal')">&times;</span>
+            <div class="login-form">
+                <div class="form-header">
+                    <i class="fas fa-user"></i>
+                    <h2>User Login</h2>
+                    <p>Access your personal banking account</p>
+                </div>
+                <form id="userLoginForm">
+                    <div class="form-group">
+                        <label for="userLoginEmail">Email or Mobile Number</label>
+                        <input type="text" id="userLoginEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userLoginPassword">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="userLoginPassword" name="password" required>
+                            <i class="fas fa-eye" onclick="togglePassword('userLoginPassword')"></i>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Login to Account</button>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('adminLoginModal')">&times;</span>
+            <div class="login-form admin-login">
+                <div class="form-header">
+                    <i class="fas fa-user-shield"></i>
+                    <h2>Admin Login</h2>
+                    <p>Administrative access only</p>
+                </div>
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="adminLoginEmail">Admin Email</label>
+                        <input type="email" id="adminLoginEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminLoginPassword">Admin Password</label>
+                        <div class="password-input">
+                            <input type="password" id="adminLoginPassword" name="password" required>
+                            <i class="fas fa-eye" onclick="togglePassword('adminLoginPassword')"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminCode">Admin Code</label>
+                        <input type="text" id="adminCode" name="adminCode" placeholder="Enter admin verification code" required>
+                    </div>
+                    <button type="submit" class="btn-submit admin-btn">Admin Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('registerModal')">&times;</span>
+            <div class="register-form">
+                <div class="form-header">
+                    <i class="fas fa-university"></i>
+                    <h2>Create Account</h2>
+                </div>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName">Full Name</label>
+                        <input type="text" id="registerName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">Email Address</label>
+                        <input type="email" id="registerEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerMobile">Mobile Number</label>
+                        <input type="tel" id="registerMobile" name="mobile" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword">Password</label>
+                        <div class="password-input">
+                            <input type="password" id="registerPassword" name="password" required>
+                            <i class="fas fa-eye" onclick="togglePassword('registerPassword')"></i>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Create Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="banking-script.js"></script>
+</body>
+</html>

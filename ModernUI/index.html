@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoBank - Modern Banking Experience</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Landing Page -->
+    <section id="landing" class="page active">
+        <div class="hero-background"></div>
+        <header class="main-header">
+            <div class="logo">NeoBank</div>
+            <nav class="main-nav">
+                <a href="#" class="nav-link">Features</a>
+                <a href="#" class="nav-link">Security</a>
+                <a href="#" class="nav-link">Pricing</a>
+                <a href="#" class="nav-link btn-primary" onclick="showPage('dashboard')">Dashboard</a>
+            </nav>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">☀</button>
+        </header>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Banking <span class="highlight">Reimagined</span></h1>
+                <p class="hero-subtitle">Experience seamless financial management with cutting-edge technology and
+                    unparalleled security</p>
+                <div class="hero-actions">
+                    <button class="btn-primary btn-large" onclick="showPage('dashboard')">Open Account</button>
+                    <button class="btn-secondary btn-large">Learn More</button>
+                </div>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <span class="trust-number">2M+</span>
+                        <span class="trust-label">Users</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">$50B+</span>
+                        <span class="trust-label">Secured</span>
+                    </div>
+                    <div class="trust-item">
+                        <span class="trust-number">99.9%</span>
+                        <span class="trust-label">Uptime</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1"></div>
+                <div class="floating-card card-2"></div>
+                <div class="floating-card card-3"></div>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Transfers</h3>
+                <p>Send money globally in seconds with zero fees</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Bank-Grade Security</h3>
+                <p>Military-grade encryption protecting your assets</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Smart Analytics</h3>
+                <p>AI-powered insights into your spending habits</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3>Premium Cards</h3>
+                <p>Exclusive rewards and cashback on every purchase</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="page">
+        <div class="app-shell">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo">NeoBank</div>
+                </div>
+                <nav class="sidebar-nav">
+                    <a href="#" class="sidebar-link active" onclick="showSection('overview')">
+                        <span class="link-icon">📊</span>
+                        <span class="link-text">Overview</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showSection('cards')">
+                        <span class="link-icon">💳</span>
+                        <span class="link-text">Cards</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showSection('transactions')">
+                        <span class="link-icon">💸</span>
+                        <span class="link-text">Transactions</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showSection('investments')">
+                        <span class="link-icon">📈</span>
+                        <span class="link-text">Investments</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showSection('loans')">
+                        <span class="link-icon">🏦</span>
+                        <span class="link-text">Loans</span>
+                    </a>
+                    <a href="#" class="sidebar-link" onclick="showSection('settings')">
+                        <span class="link-icon">⚙️</span>
+                        <span class="link-text">Settings</span>
+                    </a>
+                </nav>
+                <div class="sidebar-footer">
+                    <button class="btn-secondary btn-small" onclick="showPage('landing')">← Back to Home</button>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <!-- Overview Section -->
+                <div id="overview" class="section active">
+                    <header class="section-header">
+                        <div>
+                            <h1>Account Overview</h1>
+                            <p class="section-subtitle">Welcome back, Alex Morgan</p>
+                        </div>
+                        <button class="btn-primary">+ New Transaction</button>
+                    </header>
+
+                    <div class="balance-cards">
+                        <div class="balance-card primary">
+                            <div class="card-header">
+                                <span class="card-label">Total Balance</span>
+                                <span class="card-trend positive">+12.5%</span>
+                            </div>
+                            <div class="card-amount">$124,582.00</div>
+                            <div class="card-footer">
+                                <span class="card-subtitle">Updated 2 min ago</span>
+                            </div>
+                            <div class="card-decoration"></div>
+                        </div>
+                        <div class="balance-card">
+                            <div class="card-header">
+                                <span class="card-label">Income</span>
+                                <span class="card-trend positive">+8.2%</span>
+                            </div>
+                            <div class="card-amount">$42,750.00</div>
+                            <div class="card-footer">
+                                <span class="card-subtitle">This month</span>
+                            </div>
+                        </div>
+                        <div class="balance-card">
+                            <div class="card-header">
+                                <span class="card-label">Expenses</span>
+                                <span class="card-trend negative">-3.1%</span>
+                            </div>
+                            <div class="card-amount">$18,240.00</div>
+                            <div class="card-footer">
+                                <span class="card-subtitle">This month</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-grid">
+                        <div class="chart-card">
+                            <h3>Spending Overview</h3>
+                            <div class="chart-bars">
+                                <div class="bar-group">
+                                    <div class="bar" style="--height: 65%;"></div>
+                                    <span class="bar-label">Mon</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="--height: 45%;"></div>
+                                    <span class="bar-label">Tue</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="--height: 80%;"></div>
+                                    <span class="bar-label">Wed</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="--height: 55%;"></div>
+                                    <span class="bar-label">Thu</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="--height: 90%;"></div>
+                                    <span class="bar-label">Fri</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="--height: 40%;"></div>
+                                    <span class="bar-label">Sat</span>
+                                </div>
+                                <div class="bar-group">
+                                    <div class="bar" style="--height: 30%;"></div>
+                                    <span class="bar-label">Sun</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="activity-card">
+                            <h3>Recent Activity</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon income">↓</div>
+                                    <div class="activity-details">
+                                        <div class="activity-name">Salary Deposit</div>
+                                        <div class="activity-date">Today, 09:00 AM</div>
+                                    </div>
+                                    <div class="activity-amount positive">+$5,200.00</div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon expense">↑</div>
+                                    <div class="activity-details">
+                                        <div class="activity-name">Amazon Purchase</div>
+                                        <div class="activity-date">Yesterday, 03:45 PM</div>
+                                    </div>
+                                    <div class="activity-amount negative">-$129.99</div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon income">↓</div>
+                                    <div class="activity-details">
+                                        <div class="activity-name">Freelance Payment</div>
+                                        <div class="activity-date">Dec 22, 11:30 AM</div>
+                                    </div>
+                                    <div class="activity-amount positive">+$2,400.00</div>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-icon expense">↑</div>
+                                    <div class="activity-details">
+                                        <div class="activity-name">Grocery Store</div>
+                                        <div class="activity-date">Dec 21, 06:20 PM</div>
+                                    </div>
+                                    <div class="activity-amount negative">-$87.50</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards Section -->
+                <div id="cards" class="section">
+                    <header class="section-header">
+                        <h1>My Cards</h1>
+                        <button class="btn-primary">+ Add New Card</button>
+                    </header>
+
+                    <div class="cards-showcase">
+                        <div class="credit-card premium">
+                            <div class="card-chip"></div>
+                            <div class="card-number">•••• •••• •••• 4829</div>
+                            <div class="card-info">
+                                <div class="card-holder">Alex Morgan</div>
+                                <div class="card-expiry">12/27</div>
+                            </div>
+                            <div class="card-network">Premium</div>
+                        </div>
+                        <div class="credit-card standard">
+                            <div class="card-chip"></div>
+                            <div class="card-number">•••• •••• •••• 7231</div>
+                            <div class="card-info">
+                                <div class="card-holder">Alex Morgan</div>
+                                <div class="card-expiry">09/26</div>
+                            </div>
+                            <div class="card-network">Standard</div>
+                        </div>
+                    </div>
+
+                    <div class="card-details">
+                        <h3>Card Details</h3>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Card Type</span>
+                                <span class="detail-value">Premium Platinum</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Credit Limit</span>
+                                <span class="detail-value">$50,000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Available Credit</span>
+                                <span class="detail-value">$42,180</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Rewards Points</span>
+                                <span class="detail-value">24,580 pts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transactions Section -->
+                <div id="transactions" class="section">
+                    <header class="section-header">
+                        <h1>Transactions</h1>
+                        <div class="filter-group">
+                            <button class="btn-filter active">All</button>
+                            <button class="btn-filter">Income</button>
+                            <button class="btn-filter">Expenses</button>
+                        </div>
+                    </header>
+
+                    <div class="transactions-table">
+                        <div class="table-header">
+                            <div class="th">Date</div>
+                            <div class="th">Description</div>
+                            <div class="th">Category</div>
+                            <div class="th">Amount</div>
+                            <div class="th">Status</div>
+                        </div>
+                        <div class="table-row">
+                            <div class="td">Dec 24, 2024</div>
+                            <div class="td">Salary Deposit</div>
+                            <div class="td"><span class="tag tag-income">Income</span></div>
+                            <div class="td positive">+$5,200.00</div>
+                            <div class="td"><span class="status-badge completed">Completed</span></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="td">Dec 23, 2024</div>
+                            <div class="td">Amazon Purchase</div>
+                            <div class="td"><span class="tag tag-shopping">Shopping</span></div>
+                            <div class="td negative">-$129.99</div>
+                            <div class="td"><span class="status-badge completed">Completed</span></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="td">Dec 22, 2024</div>
+                            <div class="td">Freelance Payment</div>
+                            <div class="td"><span class="tag tag-income">Income</span></div>
+                            <div class="td positive">+$2,400.00</div>
+                            <div class="td"><span class="status-badge completed">Completed</span></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="td">Dec 21, 2024</div>
+                            <div class="td">Grocery Store</div>
+                            <div class="td"><span class="tag tag-food">Food</span></div>
+                            <div class="td negative">-$87.50</div>
+                            <div class="td"><span class="status-badge completed">Completed</span></div>
+                        </div>
+                        <div class="table-row">
+                            <div class="td">Dec 20, 2024</div>
+                            <div class="td">Netflix Subscription</div>
+                            <div class="td"><span class="tag tag-entertainment">Entertainment</span></div>
+                            <div class="td negative">-$15.99</div>
+                            <div class="td"><span class="status-badge pending">Pending</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Investments Section -->
+                <div id="investments" class="section">
+                    <header class="section-header">
+                        <h1>Investments</h1>
+                        <button class="btn-primary">+ New Investment</button>
+                    </header>
+
+                    <div class="investment-summary">
+                        <div class="summary-card">
+                            <div class="progress-ring" style="--progress: 75%;">
+                                <div class="ring-content">
+                                    <div class="ring-value">$68,450</div>
+                                    <div class="ring-label">Portfolio Value</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="progress-ring green" style="--progress: 65%;">
+                                <div class="ring-content">
+                                    <div class="ring-value">+18.5%</div>
+                                    <div class="ring-label">Total Return</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="investments-list">
+                        <div class="investment-item">
+                            <div class="investment-info">
+                                <div class="investment-name">Tech Growth Fund</div>
+                                <div class="investment-details">125 shares • $245.80/share</div>
+                            </div>
+                            <div class="investment-performance">
+                                <div class="investment-value">$30,725.00</div>
+                                <div class="investment-change positive">+12.4%</div>
+                            </div>
+                        </div>
+                        <div class="investment-item">
+                            <div class="investment-info">
+                                <div class="investment-name">S&P 500 Index</div>
+                                <div class="investment-details">80 shares • $415.30/share</div>
+                            </div>
+                            <div class="investment-performance">
+                                <div class="investment-value">$33,224.00</div>
+                                <div class="investment-change positive">+8.7%</div>
+                            </div>
+                        </div>
+                        <div class="investment-item">
+                            <div class="investment-info">
+                                <div class="investment-name">Crypto Portfolio</div>
+                                <div class="investment-details">Mixed holdings</div>
+                            </div>
+                            <div class="investment-performance">
+                                <div class="investment-value">$4,501.00</div>
+                                <div class="investment-change negative">-5.2%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loans Section -->
+                <div id="loans" class="section">
+                    <header class="section-header">
+                        <h1>Loans</h1>
+                        <button class="btn-primary">Apply for Loan</button>
+                    </header>
+
+                    <div class="loan-cards">
+                        <div class="loan-card">
+                            <h3>Home Loan</h3>
+                            <div class="loan-amount">$250,000</div>
+                            <div class="loan-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress: 35%;"></div>
+                                </div>
+                                <div class="progress-labels">
+                                    <span>35% paid</span>
+                                    <span>$87,500 remaining</span>
+                                </div>
+                            </div>
+                            <div class="loan-details">
+                                <div class="detail-item">
+                                    <span>Monthly EMI</span>
+                                    <span>$1,850</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Interest Rate</span>
+                                    <span>3.5% APR</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="loan-card">
+                            <h3>Personal Loan</h3>
+                            <div class="loan-amount">$15,000</div>
+                            <div class="loan-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="--progress: 68%;"></div>
+                                </div>
+                                <div class="progress-labels">
+                                    <span>68% paid</span>
+                                    <span>$4,800 remaining</span>
+                                </div>
+                            </div>
+                            <div class="loan-details">
+                                <div class="detail-item">
+                                    <span>Monthly EMI</span>
+                                    <span>$425</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Interest Rate</span>
+                                    <span>6.2% APR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Section -->
+                <div id="settings" class="section">
+                    <header class="section-header">
+                        <h1>Settings</h1>
+                    </header>
+
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h3>Profile Information</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-input" value="Alex Morgan"
+                                        placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-input" value="alex.morgan@email.com"
+                                        placeholder="Enter your email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-input" value="+1 (555) 123-4567"
+                                        placeholder="Enter phone number">
+                                </div>
+                                <button type="submit" class="btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Security Settings</h3>
+                            <div class="security-options">
+                                <div class="security-item">
+                                    <div>
+                                        <div class="security-title">Two-Factor Authentication</div>
+                                        <div class="security-description">Add an extra layer of security</div>
+                                    </div>
+                                    <label class="toggle">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="security-item">
+                                    <div>
+                                        <div class="security-title">Biometric Login</div>
+                                        <div class="security-description">Use fingerprint or face ID</div>
+                                    </div>
+                                    <label class="toggle">
+                                        <input type="checkbox" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="security-item">
+                                    <div>
+                                        <div class="security-title">Email Notifications</div>
+                                        <div class="security-description">Get alerts for transactions</div>
+                                    </div>
+                                    <label class="toggle">
+                                        <input type="checkbox">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+            event.target.closest('.sidebar-link').classList.add('active');
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+            const btn = document.querySelector('.theme-toggle');
+            btn.textContent = document.body.classList.contains('light-theme') ? '🌙' : '☀';
+        }
+    </script>
+</body>
+
+</html>

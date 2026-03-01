@@ -1,0 +1,517 @@
+/* Admin Dashboard Light Theme */
+
+.admin-dashboard {
+    --admin-bg-primary: #f3f4f6;
+    /* Light Gray */
+    --admin-bg-secondary: #ffffff;
+    /* White */
+    --admin-bg-tertiary: #e5e7eb;
+    /* Lighter Gray */
+    --admin-text-primary: #1f2937;
+    /* Gray 800 */
+    --admin-text-secondary: #6b7280;
+    /* Gray 500 */
+    --admin-accent: #3b82f6;
+    /* Blue 500 */
+    --admin-accent-hover: #2563eb;
+    /* Blue 600 */
+    --admin-border: #e5e7eb;
+    /* Gray 200 */
+    --admin-danger: #ef4444;
+    --admin-success: #10b981;
+    --admin-warning: #f59e0b;
+
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--admin-text-primary);
+    background-color: var(--admin-bg-primary);
+    min-height: 100vh;
+    display: flex;
+}
+
+/* Sidebar Styling */
+.admin-dashboard .sidebar {
+    width: 260px;
+    background-color: var(--admin-bg-secondary);
+    border-right: 1px solid var(--admin-border);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.admin-dashboard .sidebar-header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-dashboard .sidebar-header span {
+    color: var(--admin-accent);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.admin-dashboard .sidebar-nav {
+    padding: 20px 0;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.admin-dashboard .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 24px;
+    color: var(--admin-text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.admin-dashboard .nav-item:hover,
+.admin-dashboard .nav-item.active {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--admin-accent);
+    border-left-color: var(--admin-accent);
+}
+
+.admin-dashboard .nav-item.logout {
+    margin-top: auto;
+    border-top: 1px solid var(--admin-border);
+    color: var(--admin-danger);
+}
+
+.admin-dashboard .nav-item.logout:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-left-color: var(--admin-danger);
+    color: var(--admin-danger);
+}
+
+/* Main Content Styling */
+.admin-dashboard .main-content {
+    flex: 1;
+    margin-left: 260px;
+    background-color: var(--admin-bg-primary);
+    min-height: 100vh;
+}
+
+.admin-dashboard .admin-header {
+    background-color: var(--admin-bg-secondary);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--admin-border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.admin-dashboard .admin-header h1 {
+    font-size: 24px;
+    color: var(--admin-text-primary);
+    margin: 0;
+}
+
+.admin-dashboard .admin-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--admin-accent);
+    font-size: 14px;
+    padding: 8px 16px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.admin-dashboard .content-section {
+    padding: 30px;
+}
+
+/* Cards & Stats */
+.admin-dashboard .stats-grid,
+.admin-dashboard .reports-grid,
+.admin-dashboard .settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+.admin-dashboard .stat-card,
+.admin-dashboard .report-card,
+.admin-dashboard .setting-card,
+.admin-dashboard .chart-card,
+.admin-dashboard .recent-activity {
+    background-color: var(--admin-bg-secondary);
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid var(--admin-border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.admin-dashboard .stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--admin-accent);
+}
+
+.admin-dashboard .stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(59, 130, 246, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.admin-dashboard .stat-icon i {
+    font-size: 24px;
+    color: var(--admin-accent);
+}
+
+.admin-dashboard .stat-info h3 {
+    color: var(--admin-text-secondary);
+    font-size: 14px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.admin-dashboard .stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--admin-text-primary);
+    margin-bottom: 8px;
+}
+
+.admin-dashboard .stat-change {
+    font-size: 13px;
+}
+
+.admin-dashboard .stat-change.positive {
+    color: var(--admin-success);
+}
+
+.admin-dashboard .stat-change.negative {
+    color: var(--admin-danger);
+}
+
+/* Tables */
+.admin-dashboard .users-table,
+.admin-dashboard .transactions-table,
+.admin-dashboard .report-table-container {
+    background-color: var(--admin-bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--admin-border);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.admin-dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-dashboard th {
+    background-color: #f9fafb;
+    color: var(--admin-text-secondary);
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-dashboard td {
+    padding: 16px;
+    border-bottom: 1px solid var(--admin-border);
+    color: var(--admin-text-primary);
+}
+
+.admin-dashboard tr:hover td {
+    background-color: rgba(59, 130, 246, 0.02);
+}
+
+/* Buttons */
+.admin-dashboard .btn-primary {
+    background-color: var(--admin-accent);
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-dashboard .btn-primary:hover {
+    background-color: var(--admin-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.admin-dashboard .btn-secondary {
+    background-color: transparent;
+    color: var(--admin-accent);
+    border: 1px solid var(--admin-accent);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.admin-dashboard .btn-secondary:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+    transform: translateY(-2px);
+}
+
+.admin-dashboard .btn-action {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    margin-right: 6px;
+    font-weight: 600;
+}
+
+.admin-dashboard .btn-action.edit,
+.admin-dashboard .btn-action.view {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.admin-dashboard .btn-action.block,
+.admin-dashboard .btn-action.blocked {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.admin-dashboard .btn-action.unblock,
+.admin-dashboard .btn-action.active {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+/* Status Badges */
+.admin-dashboard .status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.admin-dashboard .status.active,
+.admin-dashboard .status.success {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.admin-dashboard .status.blocked,
+.admin-dashboard .status.failed,
+.admin-dashboard .status.rejected {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.admin-dashboard .status.pending {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* Forms & Inputs */
+.admin-dashboard input,
+.admin-dashboard select,
+.admin-dashboard textarea {
+    background-color: var(--admin-bg-secondary);
+    border: 1px solid var(--admin-border);
+    color: var(--admin-text-primary);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.admin-dashboard input:focus,
+.admin-dashboard select:focus,
+.admin-dashboard textarea:focus {
+    outline: none;
+    border-color: var(--admin-accent);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Modals */
+.admin-dashboard .modal-content {
+    background-color: var(--admin-bg-secondary);
+    border: none;
+    color: var(--admin-text-primary);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.admin-dashboard .close {
+    color: var(--admin-text-secondary);
+}
+
+.admin-dashboard .close:hover {
+    color: var(--admin-accent);
+}
+
+/* Scrollbar */
+.admin-dashboard ::-webkit-scrollbar {
+    width: 8px;
+}
+
+.admin-dashboard ::-webkit-scrollbar-track {
+    background: var(--admin-bg-primary);
+}
+
+.admin-dashboard ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.admin-dashboard ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Message Section Specifics */
+.admin-dashboard .message-list-item {
+    border-bottom-color: var(--admin-border) !important;
+    background-color: var(--admin-bg-secondary) !important;
+}
+
+.admin-dashboard .message-list-item:hover,
+.admin-dashboard .message-list-item.selected {
+    background-color: rgba(59, 130, 246, 0.05) !important;
+    border-left-color: var(--admin-accent) !important;
+}
+
+/* Overrides for hardcoded styles in AdminDashboard.js if any */
+/* Message Section Specifics */
+.admin-dashboard .messages-container {
+    display: flex;
+    height: calc(100vh - 200px);
+    gap: 20px;
+}
+
+.admin-dashboard .conversations-panel {
+    width: 350px;
+    background-color: var(--admin-bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--admin-border);
+}
+
+.admin-dashboard .conversations-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--admin-border);
+    background-color: #f9fafb;
+}
+
+.admin-dashboard .conversation-item {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--admin-border);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-left: 4px solid transparent;
+}
+
+.admin-dashboard .conversation-item:hover {
+    background-color: #f3f4f6;
+}
+
+.admin-dashboard .conversation-item.active {
+    background-color: rgba(59, 130, 246, 0.05);
+    border-left-color: var(--admin-accent);
+}
+
+.admin-dashboard .chat-panel {
+    flex: 1;
+    background-color: var(--admin-bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--admin-border);
+}
+
+.admin-dashboard .chat-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--admin-border);
+    background-color: #f9fafb;
+}
+
+.admin-dashboard .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.admin-dashboard .message-row {
+    display: flex;
+    width: 100%;
+}
+
+.admin-dashboard .message-row.admin {
+    justify-content: flex-end;
+}
+
+.admin-dashboard .message-row.user {
+    justify-content: flex-start;
+}
+
+.admin-dashboard .message-bubble {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.admin-dashboard .message-bubble.admin-bg {
+    background-color: var(--admin-accent);
+    color: #ffffff;
+    border-top-right-radius: 2px;
+}
+
+.admin-dashboard .message-bubble.user-bg {
+    background-color: #ffffff;
+    color: var(--admin-text-primary);
+    border-top-left-radius: 2px;
+    border: 1px solid var(--admin-border);
+}
+
+.admin-dashboard .chat-input-area {
+    padding: 16px 20px;
+    border-top: 1px solid var(--admin-border);
+    background-color: var(--admin-bg-secondary);
+}
+
+.admin-dashboard .chat-input {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff;
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+    color: var(--admin-text-primary);
+    resize: none;
+}
+
+.admin-dashboard .chat-input:focus {
+    border-color: var(--admin-accent);
+    outline: none;
+}

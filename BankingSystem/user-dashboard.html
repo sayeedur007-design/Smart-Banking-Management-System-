@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - SecureBank</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-university"></i>
+                <span>SecureBank</span>
+            </div>
+            <div class="user-info">
+                <span>Welcome, <strong id="userName">John Doe</strong></span>
+                <div class="user-menu">
+                    <button class="user-btn" onclick="toggleUserMenu()">
+                        <i class="fas fa-user-circle"></i>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="user-dropdown" id="userDropdown">
+                        <a href="#"><i class="fas fa-user"></i> Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="banking-homepage.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+        <!-- Account Overview -->
+        <section class="account-overview">
+            <div class="balance-card">
+                <h2>Account Balance</h2>
+                <div class="balance-amount">₹<span id="accountBalance">25,450.75</span></div>
+                <p>Available Balance</p>
+            </div>
+            <div class="quick-actions">
+                <button class="action-btn" onclick="openModal('transferModal')">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Send Money</span>
+                </button>
+                <button class="action-btn" onclick="openModal('rechargeModal')">
+                    <i class="fas fa-mobile"></i>
+                    <span>Recharge</span>
+                </button>
+                <button class="action-btn" onclick="openModal('billPayModal')">
+                    <i class="fas fa-file-invoice"></i>
+                    <span>Pay Bills</span>
+                </button>
+                <button class="action-btn">
+                    <i class="fas fa-qrcode"></i>
+                    <span>QR Pay</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="services-section">
+            <h3>Banking Services</h3>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-credit-card"></i>
+                    <h4>Cards</h4>
+                    <p>Manage your debit/credit cards</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-piggy-bank"></i>
+                    <h4>Savings</h4>
+                    <p>View savings account details</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Investments</h4>
+                    <p>Track your investments</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Insurance</h4>
+                    <p>Manage insurance policies</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Transactions -->
+        <section class="transactions-section">
+            <h3>Recent Transactions</h3>
+            <div class="transactions-list">
+                <div class="transaction-item">
+                    <div class="transaction-icon credit">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                    <div class="transaction-details">
+                        <h4>Salary Credit</h4>
+                        <p>From: ABC Company Ltd</p>
+                        <span class="date">Today, 10:30 AM</span>
+                    </div>
+                    <div class="transaction-amount credit">+₹45,000</div>
+                </div>
+                <div class="transaction-item">
+                    <div class="transaction-icon debit">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <div class="transaction-details">
+                        <h4>UPI Payment</h4>
+                        <p>To: Grocery Store</p>
+                        <span class="date">Yesterday, 6:45 PM</span>
+                    </div>
+                    <div class="transaction-amount debit">-₹1,250</div>
+                </div>
+                <div class="transaction-item">
+                    <div class="transaction-icon debit">
+                        <i class="fas fa-mobile"></i>
+                    </div>
+                    <div class="transaction-details">
+                        <h4>Mobile Recharge</h4>
+                        <p>Number: 9876543210</p>
+                        <span class="date">2 days ago, 2:15 PM</span>
+                    </div>
+                    <div class="transaction-amount debit">-₹399</div>
+                </div>
+            </div>
+            <button class="view-all-btn">View All Transactions</button>
+        </section>
+    </main>
+
+    <!-- Transfer Modal -->
+    <div id="transferModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('transferModal')">&times;</span>
+            <h2>Send Money</h2>
+            <form id="transferForm">
+                <div class="form-group">
+                    <label>Recipient Mobile/UPI ID</label>
+                    <input type="text" name="recipient" placeholder="Enter mobile number or UPI ID" required>
+                </div>
+                <div class="form-group">
+                    <label>Amount</label>
+                    <input type="number" name="amount" placeholder="Enter amount" required>
+                </div>
+                <div class="form-group">
+                    <label>Note (Optional)</label>
+                    <input type="text" name="note" placeholder="Add a note">
+                </div>
+                <button type="submit" class="btn-submit">Send Money</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Recharge Modal -->
+    <div id="rechargeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('rechargeModal')">&times;</span>
+            <h2>Mobile Recharge</h2>
+            <form id="rechargeForm">
+                <div class="form-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" name="mobile" placeholder="Enter mobile number" required>
+                </div>
+                <div class="form-group">
+                    <label>Operator</label>
+                    <select name="operator" required>
+                        <option value="">Select Operator</option>
+                        <option value="airtel">Airtel</option>
+                        <option value="jio">Jio</option>
+                        <option value="vi">Vi</option>
+                        <option value="bsnl">BSNL</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Amount</label>
+                    <select name="amount" required>
+                        <option value="">Select Plan</option>
+                        <option value="199">₹199 - 1.5GB/day, 28 days</option>
+                        <option value="399">₹399 - 2.5GB/day, 28 days</option>
+                        <option value="599">₹599 - 2GB/day, 56 days</option>
+                        <option value="999">₹999 - 3GB/day, 84 days</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Recharge Now</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bill Pay Modal -->
+    <div id="billPayModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('billPayModal')">&times;</span>
+            <h2>Pay Bills</h2>
+            <form id="billPayForm">
+                <div class="form-group">
+                    <label>Bill Type</label>
+                    <select name="billType" required>
+                        <option value="">Select Bill Type</option>
+                        <option value="electricity">Electricity</option>
+                        <option value="gas">Gas</option>
+                        <option value="water">Water</option>
+                        <option value="internet">Internet</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Consumer Number</label>
+                    <input type="text" name="consumerNumber" placeholder="Enter consumer number" required>
+                </div>
+                <div class="form-group">
+                    <label>Amount</label>
+                    <input type="number" name="amount" placeholder="Enter amount" required>
+                </div>
+                <button type="submit" class="btn-submit">Pay Bill</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
